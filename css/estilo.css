@@ -15,10 +15,17 @@ body{
     text-align: center;
 }
 
-fieldset{
+.inicio{
     border: 2px dashed;
     border-color: blueviolet;
     background-color: lightblue;
+    float: left;
+}
+
+.alumnos{
+    border: 5px dashed;
+    border-color: chartreuse;
+    background-color: seagreen;
     float: left;
 }
 
