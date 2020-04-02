@@ -15,24 +15,13 @@ body{
     text-align: center;
 }
 
+#loginP, #cuentaP,#loginA,#cuentaA {
+    text-decoration: none;
+}
+
 .inicio{
     border: 2px dashed;
     border-color: blueviolet;
     background-color: lightblue;
     float: left;
-}
-
-.alumnos{
-    border: 5px dashed;
-    border-color: chartreuse;
-    background-color: seagreen;
-    float: left;
-}
-
-#loginP, #cuentaP,#loginA,#cuentaA {
-    text-decoration: none;
-}
-
-legend{
-    color: rgb(200, 100, 0);
 }
