@@ -54,7 +54,7 @@
                     $query = "INSERT INTO profesores (Nombre, Apellido1, Apellido2,Email, Nom_Usu, Contraseña,Rol) VALUES ('$nombre', '$apellido1', '$apellido2', '$email','$usuario','$contrasena','0')";
                 
                     if (mysqli_query($conexion, $query)) {
-                        echo "<div class='alert alert-success mt-4' role='alert'><h3>Tu cuenta ha sido creada con éxito.</h3>";
+                        echo "<div class='alert alert-success mt-4' role='alert'><h3>Tu cuenta ha sido creada con éxito.</h3></div>";
                                 
                         } else {
                             echo "Error: " . $query . "<br>" . mysqli_error($conexion);
