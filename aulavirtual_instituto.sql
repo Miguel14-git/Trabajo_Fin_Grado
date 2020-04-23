@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 22-04-2020 a las 16:23:07
+-- Tiempo de generación: 23-04-2020 a las 15:55:43
 -- Versión del servidor: 10.4.8-MariaDB
 -- Versión de PHP: 7.3.10
 
@@ -36,7 +36,7 @@ CREATE TABLE `alumnos` (
   `Email` varchar(250) NOT NULL,
   `Nom_Usu` varchar(150) NOT NULL,
   `Contraseña` varchar(150) NOT NULL,
-  `Rol` int(2) NOT NULL
+  `Rol` varchar(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -117,7 +117,7 @@ CREATE TABLE `profesores` (
   `Email` varchar(250) NOT NULL,
   `Nom_Usu` varchar(150) NOT NULL,
   `Contraseña` varchar(150) NOT NULL,
-  `Rol` int(2) NOT NULL
+  `Rol` varchar(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -204,87 +204,6 @@ ALTER TABLE `retrasos`
 --
 ALTER TABLE `alumnos`
   MODIFY `Id_Alumno` int(3) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `asignaturas`
---
-ALTER TABLE `asignaturas`
-  MODIFY `Id_Asignatura` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `faltas`
---
-ALTER TABLE `faltas`
-  MODIFY `Id_Falta` int(3) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `impartir`
---
-ALTER TABLE `impartir`
-  MODIFY `Id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `matricula`
---
-ALTER TABLE `matricula`
-  MODIFY `Id_Matricula` int(3) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `notas`
---
-ALTER TABLE `notas`
-  MODIFY `Id_Nota` int(3) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `profesores`
---
-ALTER TABLE `profesores`
-  MODIFY `Id_Profesor` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `retrasos`
---
-ALTER TABLE `retrasos`
-  MODIFY `Id_Retraso` int(3) NOT NULL AUTO_INCREMENT;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `faltas`
---
-ALTER TABLE `faltas`
-  ADD CONSTRAINT `faltas_ibfk_1` FOREIGN KEY (`Id_Alumno`) REFERENCES `alumnos` (`Id_Alumno`),
-  ADD CONSTRAINT `faltas_ibfk_2` FOREIGN KEY (`Id_Asignatura`) REFERENCES `asignaturas` (`Id_Asignatura`);
-
---
--- Filtros para la tabla `impartir`
---
-ALTER TABLE `impartir`
-  ADD CONSTRAINT `impartir_ibfk_1` FOREIGN KEY (`Id_Profesor`) REFERENCES `profesores` (`Id_Profesor`),
-  ADD CONSTRAINT `impartir_ibfk_2` FOREIGN KEY (`Id_Asignatura`) REFERENCES `asignaturas` (`Id_Asignatura`);
-
---
--- Filtros para la tabla `matricula`
---
-ALTER TABLE `matricula`
-  ADD CONSTRAINT `matricula_ibfk_1` FOREIGN KEY (`Id_Alumno`) REFERENCES `alumnos` (`Id_Alumno`),
-  ADD CONSTRAINT `matricula_ibfk_2` FOREIGN KEY (`Id_Asignatura`) REFERENCES `asignaturas` (`Id_Asignatura`);
-
---
--- Filtros para la tabla `notas`
---
-ALTER TABLE `notas`
-  ADD CONSTRAINT `notas_ibfk_1` FOREIGN KEY (`Id_Alumno`) REFERENCES `alumnos` (`Id_Alumno`),
-  ADD CONSTRAINT `notas_ibfk_2` FOREIGN KEY (`Id_Asignatura`) REFERENCES `asignaturas` (`Id_Asignatura`);
-
---
--- Filtros para la tabla `retrasos`
---
-ALTER TABLE `retrasos`
-  ADD CONSTRAINT `retrasos_ibfk_1` FOREIGN KEY (`Id_Alumno`) REFERENCES `alumnos` (`Id_Alumno`),
-  ADD CONSTRAINT `retrasos_ibfk_2` FOREIGN KEY (`Id_Asignatura`) REFERENCES `asignaturas` (`Id_Asignatura`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
