@@ -51,10 +51,10 @@
                     //$passHash = password_hash($pass, PASSWORD_DEFAULT);
                     
                     // Query to send Name, Email and Password hash to the database
-                    $query = "INSERT INTO profesores (Nombre, Apellido1, Apellido2,Email, Nom_Usu, Contraseña,Rol) VALUES ('$nombre', '$apellido1', '$apellido2', '$email','$usuario','$contrasena','0')";
+                    $query = "INSERT INTO profesores (Nombre, Apellido1, Apellido2,Email, Nom_Usu, Contraseña,Rol) VALUES ('$nombre', '$apellido1', '$apellido2', '$email','$usuario','$contrasena','P')";
                 
                     if (mysqli_query($conexion, $query)) {
-                        echo "<div class='alert alert-success mt-4' role='alert'><h3>Tu cuenta ha sido creada con éxito.</h3></div>";
+                        echo "< class='alert alert-success mt-4' role='alert'><h3>Tu cuenta ha sido creada con éxito.</h3>";
                                 
                         } else {
                             echo "Error: " . $query . "<br>" . mysqli_error($conexion);
@@ -62,7 +62,7 @@
                     }	
                     mysqli_close($conexion);
             ?>
-            <a class='btn btn-outline-primary' href='../Pagina_Inicio.html' role='button'>Ir a página de inicio</a>
+            <a class='btn btn-outline-primary' href='../Pagina_Bienvenida.html' role='button'>Ir a página de inicio</a>
         </div>
     </body>
 </html>
